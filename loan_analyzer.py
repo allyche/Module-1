@@ -28,7 +28,7 @@ print(f"There are {total_number_of_loans} loans.")
 # YOUR CODE HERE!
 
 total_of_all_loans = sum(loan_costs)
-print(f"Total of all loans are ${total_of_all_loans}.")
+print(f"Total of all loans: ${total_of_all_loans}")
 
 # What is the average loan amount from the list?
 # @TODO: Using the sum of all loans and the total number of loans, calculate the average loan price.
@@ -36,7 +36,7 @@ print(f"Total of all loans are ${total_of_all_loans}.")
 # YOUR CODE HERE!
 
 average_loan_amount = total_of_all_loans / total_number_of_loans
-print(f"Average loa amount is ${average_loan_amount}.")
+print(f"Average loan amount: ${average_loan_amount: .0f}")
 
 
 """Part 2: Analyze Loan Data.
@@ -132,7 +132,7 @@ def calculate_present_value(future_value, remaining_months, annual_discount_rate
 
 annual_discount_rate = 0.2
 present_value = calculate_present_value (new_loan["future_value"], new_loan["remaining_months"], annual_discount_rate)    
-print(f"The present value of the loan is: {present_value: .2f}")
+print(f"The present value of the loan is: ${present_value: .2f}")
 
 
 """Part 4: Conditionally filter lists of loans.
