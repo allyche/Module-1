@@ -74,8 +74,10 @@ loan = {
 # Print each variable.
 # YOUR CODE HERE!
 
-print("Future value is: $" + str(loan.get("future_value")))
-print("Remaining months is: " + str(loan.get("remaining_months")))
+future_value = loan.get("future_value")
+remaining_months = loan.get("remaining_months")
+print(f"Future value is: ${future_value}")
+print(f"Remaining months is: {remaining_months}")
 
 # @TODO: Use the formula for Present Value to calculate a "fair value" of the loan.
 # Use a minimum required return of 20% as the discount rate.
@@ -84,7 +86,8 @@ print("Remaining months is: " + str(loan.get("remaining_months")))
 
 # YOUR CODE HERE!
 
-fair_value =  loan.get("future_value") / (1 + 0.2/12)** loan.get("remaining_months")
+discount_rate = 0.2
+fair_value =  loan.get("future_value") / (1 + discount_rate/12)** loan.get("remaining_months")
 print(f"The fair value of the loan is ${fair_value: .2f}")
 
 # If Present Value represents what the loan is really worth, does it make sense to buy the loan at its cost?
@@ -214,7 +217,6 @@ output_path = Path("inexpensive_loans.csv")
 # and each row of `loan.values()` from the `inexpensive_loans` list.
 # YOUR CODE HERE!
 
-header = ["loan_price", "remaining_months", "repayment_interval", "future_value"]
 csvpath = Path("inexpensive_loans.csv")
 with open(csvpath, "w") as csvfile:
     csvwriter = csv.writer(csvfile, delimiter=",")
